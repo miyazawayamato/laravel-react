@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TotalController;
+use App\Http\Controllers\EachdayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/total/{id}', [TotalController::class, 'total']);
+Route::get('/day/{id}/{year}/{month}/{day}', [EachdayController::class, 'eachDay']);
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
