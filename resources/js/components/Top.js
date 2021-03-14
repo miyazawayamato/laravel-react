@@ -12,8 +12,12 @@ const Top = () => {
         console.table(res.data);
         
     }
-        // initial();
+    // initial();
     // }, []);
+    
+        
+
+    
     
     return (
         <div>
