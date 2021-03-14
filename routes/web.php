@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TotalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +20,6 @@ Route::get('/{any}', function(){
 
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('test');
 // });
 // Route::get('/', [CalendarController::class, 'test']);
