@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,7 +25,31 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        
+        $schedule->call(function () {
+            
+            $url = "https://api.opendata.go.jp/mhlw/death-cases?apikey=tHJPhnlzZ13TAqOXAFG5iyGxQKE2QREG";
+            $json = file_get_contents($url);
+            $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+            $arr = json_decode($json,true);
+            $key = array_key_last($arr);
+            
+            $config = config('twitter');
+            
+            $twitter = new TwitterOAuth(
+                $config['api_key'], 
+                $config['secret_key'], 
+                $config['access_token'], 
+                $config['access_token_secret']
+            );
+                
+            $twitter->post("statuses/update", [
+                "status" =>
+                date("m/d").'最新コロナウイル死者数情報'. PHP_EOL
+                .$arr[$key]["日付"].'時点で'.PHP_EOL
+                .$arr[$key]["死亡者数"].'人です'
+            ]);
+        })->everyMinute();
     }
 
     /**
