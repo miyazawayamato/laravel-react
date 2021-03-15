@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const EachDay = () => {
     
     const [values, setValues] = useState({year: 2021, month: 1, day: 1});
+    const [type, setType] = useState('「」');
+    const [number, setNumber] = useState('「」');
+    const [date, setDate] = useState('「」');
+    
     
     const getNum = async (id) => {
         
-        
-        
-        const res = await axios.get('../spasite/public/api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
-        
-        
-        console.log(res.data);
+        const res = await axios.get('../public/api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
         console.table(res.data);
+        const data = res.data.data;
+        
+        setDate(data['日付']);
+        setType(data['分類']);
+        setNumber(data['人数']);
         
     }
     
@@ -37,37 +42,37 @@ const EachDay = () => {
     }
     
     return (
-        <div>
-            <p>トップ</p>
-            <p>{values.year}</p>
-            <p>{values.month}</p>
-            <p>{values.day}</p>
-            <p></p>
-            <p></p>
-            <div>
-                <button onClick={() =>getNum(1)}>取得</button>
-                <button onClick={() =>getNum(2)}>取得</button>
-                <button onClick={() =>getNum(3)}>取得</button>
-            </div>
-            <div>
-                <select name="year" value={values.year} onChange={valuesChange} >
+        <div className="left">
+            <p>日別情報</p>
+            <p><span className="emphasis">{date}</span>のコロナウイルス<span className="emphasis">{type}</span>は</p>
+            <p><span className="number">{number}</span>人</p>
+            <div className="selects">
+                <select name="year" value={values.year} onChange={valuesChange} className="select-max">
                     <option>2020</option>
                     <option>2021</option>
                 </select>
+                <span>年</span>
                 {(() => {
                 const month = [];
                     for (let i = 1; i < 13; i++) {
                         month.push(<option>{ i }</option>)
                     }
-                    return <select name="month" value={values.month} onChange={valuesChange}>{ month }</select>;
+                    return <select name="month" value={values.month} onChange={valuesChange} className="select-min">{ month }</select>;
                 })()}
+                <span>月</span>
                 {(() => {
                 const day = [];
                     for (let t = 1; t < 32; t++) {
                         day.push(<option>{ t }</option>)
                     }
-                    return <select name="day" value={values.day} onChange={valuesChange}>{ day }</select>;
+                    return <select name="day" value={values.day} onChange={valuesChange} className="select-min">{ day }</select>;
                 })()}
+                <span>日</span>
+            </div>
+            <div>
+                <button onClick={() =>getNum(1)}>陽性者数</button>
+                <button onClick={() =>getNum(2)}>重症者数</button>
+                <button onClick={() =>getNum(3)}>検査人数</button>
             </div>
         </div>
     );
