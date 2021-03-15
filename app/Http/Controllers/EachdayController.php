@@ -28,7 +28,7 @@ class EachdayController extends Controller
                 } else {
                     $result = ['日付' => '該当データなし', "PCR 検査陽性者数(単日)" => '該当データなし']; 
                 }
-                $data = ['日付' => $result['日付'], '人数' => $result["PCR 検査陽性者数(単日)"]];
+                $data = ['分類' => '陽性者数', '日付' => $result['日付'], '人数' => $result["PCR 検査陽性者数(単日)"]];
                 break;
             case 2:
                 
@@ -44,14 +44,14 @@ class EachdayController extends Controller
                 } else {
                     $result = ['日付' => '該当データなし', "重症者数" => '該当データなし']; 
                 }
-                $data = ['日付' => $result['日付'], '人数' => $result["重症者数"]];
+                $data = ['分類' => '重症者数', '日付' => $result['日付'], '人数' => $result["重症者数"]];
                 
                 break;
                 
             case 3:
                 //検査人数
                 
-                $url = "https://api.opendata.go.jp/mhlw/test-case?apikey=tHJPhnlzZ13TAqOXAFG5iyGxQKE2QREG";
+                $url = "https://api.opendata.go.jp/mhlw/test-cases?apikey=tHJPhnlzZ13TAqOXAFG5iyGxQKE2QREG";
                 $json = file_get_contents($url);
                 $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
                 $arr = json_decode($json,true);
@@ -62,7 +62,7 @@ class EachdayController extends Controller
                 } else {
                     $result = ['日付' => '該当データなし', "PCR 検査実施件数(単日)" => '該当データなし']; 
                 }
-                $data = ['日付' => $result['日付'], '人数' => $result["PCR 検査実施件数(単日)"]];
+                $data = ['分類' => '検査人数', '日付' => $result['日付'], '人数' => $result["PCR 検査実施件数(単日)"]];
                 break;
         }
         

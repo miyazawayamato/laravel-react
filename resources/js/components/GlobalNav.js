@@ -5,10 +5,10 @@ const GlobalNav = () => {
     return(
         <nav>
             <ul>
-                <Link to="/">
+                <Link to="/spasite/public">
                     <li>Top</li>
                 </Link>
-                <Link to="/about">
+                <Link to="/spasite/public/day">
                     <li>About</li>
                 </Link>
             </ul>

@@ -1,0 +1,102 @@
+body {
+    margin: 30px auto;
+    width: 75%;
+}
+
+.half {
+    display: flex;
+}
+
+.left {
+    width: 70%;
+}
+
+.right {
+    width: 30%;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.emphasis {
+    font-weight: bold;
+}
+
+.number {
+    font-size: 10vw;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    color: white;
+    background-color: #eb6100;
+    border-radius: 100vh;
+    padding: 10px;
+    margin-right: 10px;
+    &:hover {
+        background-color: #f56500;
+        cursor: pointer;
+    }
+}
+
+.selects {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.select-max {
+    width: 100px;
+}
+
+.select-min {
+    width: 60px;
+}
+
+@media (max-width: 1200px) {
+    
+    body {
+        width: 85%;
+    }
+    
+    p {
+        font-size: 25px;
+    }
+    
+}
+@media (max-width: 970px) {
+    
+    body {
+        width: 95%;
+    }
+    
+}
+
+@media (max-width: 969px) {
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .half {
+        display: block;
+    }
+    .left {
+        margin: 0 auto;
+        width: 80%;
+    }
+    
+    .right {
+        margin: 30px auto;
+        width: 80%;
+    }
+    
+}

@@ -20,7 +20,7 @@ class TotalController extends Controller
                 $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
                 $arr = json_decode($json,true);
                 $key = array_key_last($arr);
-                $data = ['日付' => $arr[$key]["日付"], '人数' => $arr[$key]["死亡者数"]];
+                $data = ['分類' => '死亡者数', '日付' => $arr[$key]["日付"], '人数' => $arr[$key]["死亡者数"]];
                 break;
             case 2:
                 
@@ -34,7 +34,7 @@ class TotalController extends Controller
                     $sum += (int)$num["PCR 検査陽性者数(単日)"];
                 }
                 $key = array_key_last($arr);
-                $data = ['日付' => $arr[$key]["日付"], '人数' => $sum];
+                $data = ['分類' => '陽性者数','日付' => $arr[$key]["日付"], '人数' => $sum];
                 break;
                 
             case 3:
@@ -44,7 +44,7 @@ class TotalController extends Controller
                 $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
                 $arr = json_decode($json,true);
                 $key = array_key_last($arr);
-                $data = ['日付' => $arr[$key]["日付"], '人数' => $arr[$key]["重症者数"]];
+                $data = ['分類' => '重症者数','日付' => $arr[$key]["日付"], '人数' => $arr[$key]["重症者数"]];
                 break;
         }
         
