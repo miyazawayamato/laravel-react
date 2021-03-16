@@ -1,5 +1,6 @@
 {
     "private": true,
+    
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
@@ -30,5 +31,9 @@
     },
     "dependencies": {
         "react-router-dom": "^5.2.0"
+    },
+    "engines": {
+        "node": "10.3.0"
     }
+
 }
