@@ -74,7 +74,7 @@ const EachDay = () => {
                 <button onClick={() =>getNum(2)}>重症者数</button>
                 <button onClick={() =>getNum(3)}>検査人数</button>
             </div>
-            <Link to="/">
+            <Link to="/spasite/public">
                 最新発表情報
             </Link>
         </div>
