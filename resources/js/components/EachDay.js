@@ -13,7 +13,6 @@ const EachDay = () => {
     const getNum = async (id) => {
         
         const res = await axios.get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
-        console.table(res.data);
         const data = res.data.data;
         
         setDate(data['日付']);
@@ -75,9 +74,9 @@ const EachDay = () => {
                 <button onClick={() =>getNum(2)}>重症者数</button>
                 <button onClick={() =>getNum(3)}>検査人数</button>
             </div>
-            {/* <Link to="/spasite/public" className="link">
+            <Link to="/" className="link">
                 最新発表情報
-            </Link> */}
+            </Link>
         </div>
     );
     

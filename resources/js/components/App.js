@@ -9,7 +9,6 @@ const App = () => {
     return(
         <BrowserRouter >
         <React.Fragment>
-            
             <div className="half">
                 <Switch>
                     <Route path="/" exact component={Top} /> 
