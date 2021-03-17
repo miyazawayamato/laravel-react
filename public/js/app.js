@@ -2282,6 +2282,7 @@ var EachDay = function EachDay() {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/spasite/public",
+      className: "link",
       children: "\u6700\u65B0\u767A\u8868\u60C5\u5831"
     })]
   });
@@ -2454,6 +2455,7 @@ var Top = function Top() {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/spasite/public/day",
+      className: "link",
       children: "\u65E5\u4ED8\u5225"
     })]
   });
