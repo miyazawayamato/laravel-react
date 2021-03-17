@@ -10,7 +10,7 @@
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">aaa</div>
+<div id="app"></div>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
