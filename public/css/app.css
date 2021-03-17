@@ -10065,6 +10065,7 @@ button:hover {
 }
 
 .link {
+  display: inline-block;
   margin-top: 20px;
 }
 

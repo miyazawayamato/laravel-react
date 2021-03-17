@@ -2047,11 +2047,11 @@ var App = function App() {
         className: "half",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-            path: "/spasite/public",
+            path: "/",
             exact: true,
             component: _Top__WEBPACK_IMPORTED_MODULE_2__.default
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-            path: "/spasite/public/day",
+            path: "/day",
             component: _EachDay__WEBPACK_IMPORTED_MODULE_3__.default
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Twitter__WEBPACK_IMPORTED_MODULE_4__.default, {})]
@@ -2151,13 +2151,12 @@ var EachDay = function EachDay() {
 
             case 2:
               res = _context.sent;
-              console.table(res.data);
               data = res.data.data;
               setDate(data['日付']);
               setType(data['分類']);
               setNumber(data['人数']);
 
-            case 8:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -2281,7 +2280,7 @@ var EachDay = function EachDay() {
         children: "\u691C\u67FB\u4EBA\u6570"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-      to: "/spasite/public",
+      to: "/",
       className: "link",
       children: "\u6700\u65B0\u767A\u8868\u60C5\u5831"
     })]
@@ -2454,7 +2453,7 @@ var Top = function Top() {
         children: "\u91CD\u75C7\u8005\u6570"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-      to: "/spasite/public/day",
+      to: "/day",
       className: "link",
       children: "\u65E5\u4ED8\u5225"
     })]
