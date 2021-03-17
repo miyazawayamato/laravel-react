@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const EachDay = () => {
     
@@ -11,8 +12,9 @@ const EachDay = () => {
     
     const getNum = async (id) => {
         
+        setNumber('読み込み中');
+        
         const res = await axios.get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
-        console.table(res.data);
         const data = res.data.data;
         
         setDate(data['日付']);
@@ -74,7 +76,7 @@ const EachDay = () => {
                 <button onClick={() =>getNum(2)}>重症者数</button>
                 <button onClick={() =>getNum(3)}>検査人数</button>
             </div>
-            <Link to="/">
+            <Link to="/" className="link">
                 最新発表情報
             </Link>
         </div>

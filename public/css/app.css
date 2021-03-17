@@ -10032,7 +10032,7 @@ p {
 }
 
 .number {
-  font-size: 10vw;
+  font-size: 9.5vw;
 }
 
 .buttons {
@@ -10062,6 +10062,11 @@ button:hover {
 
 .select-min {
   width: 60px;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
 }
 
 @media (max-width: 1200px) {

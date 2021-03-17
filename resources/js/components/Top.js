@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const Top = () => {
     
     const [date, setDate] = useState('');
     const [type, setType] = useState('');
-    const [number, setNumber] = useState('');
+    const [number, setNumber] = useState('読み込み中');
     
     useEffect(() => {
         
         const first = async () => {
             
+            setNumber('読み込み中');
+            
             const res = await axios.get('../../api/total/1');
             
             const data = res.data.data;
-            
-            console.table(res);
             
             setDate(data['日付']);
             setType(data['分類']);
@@ -30,7 +32,7 @@ const Top = () => {
         
         
     const initial = async (id) => {
-        
+        setNumber('読み込み中');
         const res = await axios.get('../../api/total/' + id);
         const data = res.data.data;
         setDate(data['日付']);
@@ -50,7 +52,7 @@ const Top = () => {
                 <button onClick={() =>initial(2)} type="button">陽性者数</button>
                 <button onClick={() =>initial(3)} type="button">重症者数</button>
             </div>
-            <Link to="/day">
+            <Link to="/day"  className="link">
                 日付別
             </Link>
         </div>

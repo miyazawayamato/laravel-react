@@ -7,9 +7,8 @@ import Twitter from './Twitter';
 
 const App = () => {
     return(
-        <BrowserRouter>
+        <BrowserRouter >
         <React.Fragment>
-            
             <div className="half">
                 <Switch>
                     <Route path="/" exact component={Top} /> 
