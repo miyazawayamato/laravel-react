@@ -12,14 +12,10 @@ const Top = () => {
         const first = async () => {
             
             const res = await axios.get('../../api/total/1');
-            const res2 = await axios.get('../api/total/1');
-            const res3 = await axios.get('/api/total/1');
             
             const data = res.data.data;
             
             console.table(res);
-            console.table(res2);
-            console.table(res3);
             
             setDate(data['日付']);
             setType(data['分類']);
@@ -35,7 +31,7 @@ const Top = () => {
         
     const initial = async (id) => {
         
-        const res = await axios.get('/spasite/public/api/total/' + id);
+        const res = await axios.get('../../api/total/' + id);
         const data = res.data.data;
         setDate(data['日付']);
         setType(data['分類']);
