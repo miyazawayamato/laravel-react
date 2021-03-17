@@ -52,9 +52,9 @@ const Top = () => {
                 <button onClick={() =>initial(2)} type="button">陽性者数</button>
                 <button onClick={() =>initial(3)} type="button">重症者数</button>
             </div>
-            <Link to="/spasite/public/day"  className="link">
+            {/* <Link to="/spasite/public/day"  className="link">
                 日付別
-            </Link>
+            </Link> */}
         </div>
     );
     
