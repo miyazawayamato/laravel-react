@@ -1,6 +1,5 @@
 {
     "private": true,
-    
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
@@ -9,10 +8,8 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production"
-        // "heroku-prebuild": "npm run production"
     },
     "devDependencies": {
-        
         "@babel/preset-react": "^7.0.0",
         "axios": "^0.21.1",
         "bootstrap": "^4.0.0",
@@ -20,18 +17,16 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
-        "postcss": "^8.1.14",
+        "postcss": "^8.2.8",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
-        
     },
     "dependencies": {
         "react-router-dom": "^5.2.0"
     },
-    
     "engines": {
         "node": "14.15.5",
         "npm": "6.14.11"
