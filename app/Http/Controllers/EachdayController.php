@@ -26,7 +26,7 @@ class EachdayController extends Controller
                 if ($index) {
                     $result = $arr[$index];
                 } else {
-                    $result = ['日付' => '該当データなし', "PCR 検査陽性者数(単日)" => '該当データなし']; 
+                    $result = ['日付' => $date, "PCR 検査陽性者数(単日)" => 'データなし']; 
                 }
                 $data = ['分類' => '陽性者数', '日付' => $result['日付'], '人数' => $result["PCR 検査陽性者数(単日)"]];
                 break;
@@ -42,7 +42,7 @@ class EachdayController extends Controller
                 if ($index) {
                     $result = $arr[$index];
                 } else {
-                    $result = ['日付' => '該当データなし', "重症者数" => '該当データなし']; 
+                    $result = ['日付' => $date, "重症者数" => 'データなし']; 
                 }
                 $data = ['分類' => '重症者数', '日付' => $result['日付'], '人数' => $result["重症者数"]];
                 
@@ -60,7 +60,7 @@ class EachdayController extends Controller
                 if ($index) {
                     $result = $arr[$index];
                 } else {
-                    $result = ['日付' => '該当データなし', "PCR 検査実施件数(単日)" => '該当データなし']; 
+                    $result = ['日付' => $date, "PCR 検査実施件数(単日)" => 'データなし']; 
                 }
                 $data = ['分類' => '検査人数', '日付' => $result['日付'], '人数' => $result["PCR 検査実施件数(単日)"]];
                 break;
