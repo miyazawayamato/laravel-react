@@ -11,7 +11,7 @@ const EachDay = () => {
     
     const getNum = async (id) => {
         
-        const res = await axios.get('../public/api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
+        const res = await axios.get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
         console.table(res.data);
         const data = res.data.data;
         

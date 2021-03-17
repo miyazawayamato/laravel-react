@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/{any}', function(){
-    return view('App');
+    return view('app');
 })->where('any', '.*');
 
 
 // Route::get('/', function () {
 //     return view('test');
 // });
-// Route::get('/', [CalendarController::class, 'test']);
+
