@@ -7,13 +7,13 @@ import Twitter from './Twitter';
 
 const App = () => {
     return(
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <React.Fragment>
             
             <div className="half">
                 <Switch>
-                    <Route path="/spasite/public" exact component={Top} /> 
-                    <Route path="/spasite/public/day" component={EachDay} />
+                    <Route path="/" exact component={Top} /> 
+                    <Route path="/day" component={EachDay} />
                 </Switch>
                 <Twitter />
             </div>
