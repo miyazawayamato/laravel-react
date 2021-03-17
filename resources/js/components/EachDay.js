@@ -6,13 +6,13 @@ const EachDay = () => {
     
     const [values, setValues] = useState({year: 2021, month: 1, day: 1});
     const [type, setType] = useState('「」');
-    const [number, setNumber] = useState('読み込み中');
+    const [number, setNumber] = useState('「」');
     const [date, setDate] = useState('「」');
     
     
     const getNum = async (id) => {
         
-        setNumber(data['読み込み中']);
+        setNumber('読み込み中');
         
         const res = await axios.get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
         const data = res.data.data;

@@ -7,12 +7,13 @@ const Top = () => {
     
     const [date, setDate] = useState('');
     const [type, setType] = useState('');
-    const [number, setNumber] = useState('');
+    const [number, setNumber] = useState('読み込み中');
     
     useEffect(() => {
         
         const first = async () => {
             
+            setNumber('読み込み中');
             const res = await axios.get('../../api/total/1');
             
             const data = res.data.data;
