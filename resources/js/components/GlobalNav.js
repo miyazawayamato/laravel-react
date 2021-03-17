@@ -5,7 +5,7 @@ const GlobalNav = () => {
     return(
         <nav>
             <ul>
-                <Link to="/spasite/public">
+                <Link to="/">
                     <li>Top</li>
                 </Link>
                 <Link to="/spasite/public/day">
