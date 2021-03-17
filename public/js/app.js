@@ -2146,17 +2146,18 @@ var EachDay = function EachDay() {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              setNumber('読み込み中');
+              _context.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
 
-            case 2:
+            case 3:
               res = _context.sent;
               data = res.data.data;
               setDate(data['日付']);
               setType(data['分類']);
               setNumber(data['人数']);
 
-            case 7:
+            case 8:
             case "end":
               return _context.stop();
           }
@@ -2344,7 +2345,7 @@ var Top = function Top() {
       type = _useState4[0],
       setType = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('読み込み中'),
       _useState6 = _slicedToArray(_useState5, 2),
       number = _useState6[0],
       setNumber = _useState6[1];
@@ -2357,13 +2358,13 @@ var Top = function Top() {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                setNumber('読み込み中');
+                _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get('../../api/total/1');
 
-              case 2:
+              case 3:
                 res = _context.sent;
                 data = res.data.data;
-                console.table(res);
                 setDate(data['日付']);
                 setType(data['分類']);
                 setNumber(data['人数']);
@@ -2391,17 +2392,18 @@ var Top = function Top() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _context2.next = 2;
+              setNumber('読み込み中');
+              _context2.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get('../../api/total/' + id);
 
-            case 2:
+            case 3:
               res = _context2.sent;
               data = res.data.data;
               setDate(data['日付']);
               setType(data['分類']);
               setNumber(data['人数']);
 
-            case 7:
+            case 8:
             case "end":
               return _context2.stop();
           }

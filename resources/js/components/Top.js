@@ -14,11 +14,10 @@ const Top = () => {
         const first = async () => {
             
             setNumber('読み込み中');
+            
             const res = await axios.get('../../api/total/1');
             
             const data = res.data.data;
-            
-            console.table(res);
             
             setDate(data['日付']);
             setType(data['分類']);
@@ -33,7 +32,7 @@ const Top = () => {
         
         
     const initial = async (id) => {
-        
+        setNumber('読み込み中');
         const res = await axios.get('../../api/total/' + id);
         const data = res.data.data;
         setDate(data['日付']);
