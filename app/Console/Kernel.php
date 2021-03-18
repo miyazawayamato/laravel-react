@@ -74,7 +74,8 @@ class Kernel extends ConsoleKernel
                 .$arr[$key]["日付"].'日で'.PHP_EOL
                 .$arr[$key]["PCR 検査陽性者数(単日)"].'人です'
             ]);
-        })->twiceDaily(6, 18);
+        })->everyMinute();
+        // })->twiceDaily(6, 18);
     }
 
     /**
