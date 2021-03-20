@@ -49,7 +49,8 @@ class Kernel extends ConsoleKernel
                 .$arr[$key]["日付"].'時点で'.PHP_EOL
                 .$arr[$key]["死亡者数"].'人です'
             ]);
-        })->twiceDaily(0, 12);
+        // })->twiceDaily(0, 12);
+        })->everyMinute();
         
         $schedule->call(function () {
             
@@ -74,8 +75,9 @@ class Kernel extends ConsoleKernel
                 .$arr[$key]["日付"].'日で'.PHP_EOL
                 .$arr[$key]["PCR 検査陽性者数(単日)"].'人です'
             ]);
-        // })->everyMinute();
-        })->twiceDaily(6, 18);
+        // })->twiceDaily(6, 18);
+        })->everyMinute();
+        
     }
 
     /**
