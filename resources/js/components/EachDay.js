@@ -26,7 +26,7 @@ const EachDay = () => {
         } catch (error) {
             
             setError(<p className="err-messe">
-                {error.response.status}エラー。503エラーは政府CIOポータル側で時々起こります。一定時間を置いてからアクセスしてください。
+                {error.response.status}エラー。500番台のエラーは政府CIOポータル側で時々起こります。一定時間を置いてからアクセスしてください。
             </p>);
         }
         
