@@ -2047,7 +2047,7 @@ var App = function App() {
         className: "half",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-            path: "/",
+            path: "/spasite/public",
             exact: true,
             component: _Top__WEBPACK_IMPORTED_MODULE_2__.default
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
@@ -2139,6 +2139,11 @@ var EachDay = function EachDay() {
       date = _useState8[0],
       setDate = _useState8[1];
 
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      error = _useState10[0],
+      setError = _useState10[1];
+
   var getNum = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(id) {
       var res, data;
@@ -2147,22 +2152,34 @@ var EachDay = function EachDay() {
           switch (_context.prev = _context.next) {
             case 0:
               setNumber('読み込み中');
-              _context.next = 3;
+              setError('');
+              _context.prev = 2;
+              _context.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
 
-            case 3:
+            case 5:
               res = _context.sent;
               data = res.data.data;
               setDate(data['日付']);
               setType(data['分類']);
               setNumber(data['人数']);
+              _context.next = 15;
+              break;
 
-            case 8:
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](2);
+              setError( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+                className: "err-messe",
+                children: [_context.t0.response.status, "\u30A8\u30E9\u30FC\u3002503\u30A8\u30E9\u30FC\u306F\u653F\u5E9CCIO\u30DD\u30FC\u30BF\u30EB\u5074\u3067\u6642\u3005\u8D77\u3053\u308A\u307E\u3059\u3002\u4E00\u5B9A\u6642\u9593\u3092\u7F6E\u3044\u3066\u304B\u3089\u30A2\u30AF\u30BB\u30B9\u3057\u3066\u304F\u3060\u3055\u3044\u3002"]
+              }));
+
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee);
+      }, _callee, null, [[2, 12]]);
     }));
 
     return function getNum(_x) {
@@ -2263,6 +2280,8 @@ var EachDay = function EachDay() {
       }(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
         children: "\u65E5"
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: error
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         onClick: function onClick() {
@@ -2350,6 +2369,11 @@ var Top = function Top() {
       number = _useState6[0],
       setNumber = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      error = _useState8[0],
+      setError = _useState8[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     var first = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -2359,22 +2383,33 @@ var Top = function Top() {
             switch (_context.prev = _context.next) {
               case 0:
                 setNumber('読み込み中');
-                _context.next = 3;
+                _context.prev = 1;
+                _context.next = 4;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get('../../api/total/1');
 
-              case 3:
+              case 4:
                 res = _context.sent;
                 data = res.data.data;
                 setDate(data['日付']);
                 setType(data['分類']);
                 setNumber(data['人数']);
+                _context.next = 14;
+                break;
 
-              case 8:
+              case 11:
+                _context.prev = 11;
+                _context.t0 = _context["catch"](1);
+                setError( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+                  className: "err-messe",
+                  children: [_context.t0.response.status, "\u30A8\u30E9\u30FC\u3002503\u30A8\u30E9\u30FC\u306F\u653F\u5E9CCIO\u30DD\u30FC\u30BF\u30EB\u5074\u3067\u6642\u3005\u8D77\u3053\u308A\u307E\u3059\u3002\u4E00\u5B9A\u6642\u9593\u3092\u7F6E\u3044\u3066\u304B\u3089\u30A2\u30AF\u30BB\u30B9\u3057\u3066\u304F\u3060\u3055\u3044\u3002"]
+                }));
+
+              case 14:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[1, 11]]);
       }));
 
       return function first() {
@@ -2393,22 +2428,34 @@ var Top = function Top() {
           switch (_context2.prev = _context2.next) {
             case 0:
               setNumber('読み込み中');
-              _context2.next = 3;
+              setError('');
+              _context2.prev = 2;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get('../../api/total/' + id);
 
-            case 3:
+            case 5:
               res = _context2.sent;
               data = res.data.data;
               setDate(data['日付']);
               setType(data['分類']);
               setNumber(data['人数']);
+              _context2.next = 15;
+              break;
 
-            case 8:
+            case 12:
+              _context2.prev = 12;
+              _context2.t0 = _context2["catch"](2);
+              setError( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+                className: "err-messe",
+                children: [_context2.t0.response.status, "\u30A8\u30E9\u30FC\u3002503\u30A8\u30E9\u30FC\u306F\u653F\u5E9CCIO\u30DD\u30FC\u30BF\u30EB\u5074\u3067\u6642\u3005\u8D77\u3053\u308A\u307E\u3059\u3002\u4E00\u5B9A\u6642\u9593\u3092\u7F6E\u3044\u3066\u304B\u3089\u30A2\u30AF\u30BB\u30B9\u3057\u3066\u304F\u3060\u3055\u3044\u3002"]
+              }));
+
+            case 15:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2);
+      }, _callee2, null, [[2, 12]]);
     }));
 
     return function initial(_x) {
@@ -2433,6 +2480,8 @@ var Top = function Top() {
         className: "number",
         children: number
       }), "\u4EBA"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: error
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "buttons",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {

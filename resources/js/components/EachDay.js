@@ -8,18 +8,27 @@ const EachDay = () => {
     const [type, setType] = useState('「」');
     const [number, setNumber] = useState('「」');
     const [date, setDate] = useState('「」');
-    
+    const [error, setError] = useState('');
     
     const getNum = async (id) => {
         
         setNumber('読み込み中');
-        
-        const res = await axios.get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
-        const data = res.data.data;
-        
-        setDate(data['日付']);
-        setType(data['分類']);
-        setNumber(data['人数']);
+        setError('');
+        try {
+            
+            const res = await axios.get('../../api/day/' + id + '/' + values.year + '/' + values.month + '/' + values.day);
+            const data = res.data.data;
+            
+            setDate(data['日付']);
+            setType(data['分類']);
+            setNumber(data['人数']);
+            
+        } catch (error) {
+            
+            setError(<p className="err-messe">
+                {error.response.status}エラー。503エラーは政府CIOポータル側で時々起こります。一定時間を置いてからアクセスしてください。
+            </p>);
+        }
         
     }
     
@@ -71,6 +80,7 @@ const EachDay = () => {
                 })()}
                 <span>日</span>
             </div>
+            <div>{error}</div>
             <div>
                 <button onClick={() =>getNum(1)}>陽性者数</button>
                 <button onClick={() =>getNum(2)}>重症者数</button>

@@ -10064,6 +10064,13 @@ button:hover {
   width: 60px;
 }
 
+.err-messe {
+  font-size: 15px;
+  letter-spacing: 0;
+  color: red;
+  margin-bottom: 10px;
+}
+
 .link {
   display: inline-block;
   margin-top: 20px;
