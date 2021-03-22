@@ -4,8 +4,9 @@
 [政府が提供しているAPI](http://portal.opendata.go.jp)の情報を反映させてあります。  
 現在の合計値や日別のそれぞれの状況がわかります。  
 またツイッターに自動ツイートする機能のあります。  
+heroku無料プランでDynoがスリープしている状態がほとんどなので、初回アクセス時はサイトが読み込まれるのが遅いです。
 [Twitterアカウント](https://twitter.com/test66130109)  
-[サイトへ移動](https://miyazawayamato.github.io/portfolio-home/)
+[サイトへ移動](https://glacial-sierra-22254.herokuapp.com/)
 
 ### アプリ機能
 apiで取得(laravelで)  
